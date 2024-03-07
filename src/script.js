@@ -7,6 +7,7 @@ $(document).ready(function() {
   var pullDeltaX = 0;
   var deg = 0;
   var $card, $cardReject, $cardLike;
+  var userId = '';
 
   function pullChange() {
 	  
@@ -78,11 +79,11 @@ $(document).ready(function() {
 	var imageUrl = "url('https://storagefashionimposter.blob.core.windows.net/images/fasion-dress.jpg')";
 	var productText = "Default Text";
 	
-	
 	$.ajax('/.auth/me',
     {
       success: function (data, status, xhr) {
         console.log(JSON.stringify(data))
+		userId = jQuery.parseJSON(data);
       }
     });
 	  
