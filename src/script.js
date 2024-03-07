@@ -9,6 +9,7 @@ $(document).ready(function() {
   var $card, $cardReject, $cardLike;
 
   function pullChange() {
+	  
     animating = true;
     deg = pullDeltaX / 10;
     $card.css("transform", "translateX("+ pullDeltaX +"px) rotate("+ deg +"deg)");
@@ -18,17 +19,20 @@ $(document).ready(function() {
     var likeOpacity = (opacity <= 0) ? 0 : opacity;
     $cardReject.css("opacity", rejectOpacity);
     $cardLike.css("opacity", likeOpacity);
+	
   };
 
   function release() {
-
+	 
     if (pullDeltaX >= decisionVal) {
       $card.addClass("to-right");
+	  alert("to right");
     } else if (pullDeltaX <= -decisionVal) {
       $card.addClass("to-left");
+	  alert("to left");
     }
 
-    if (Math.abs(pullDeltaX) >= decisionVal) {
+    /*if (Math.abs(pullDeltaX) >= decisionVal) {
       $card.addClass("inactive");
 
       setTimeout(function() {
@@ -39,11 +43,11 @@ $(document).ready(function() {
           $(".demo__card").removeClass("below");
         }
       }, 300);
-    }
+    }*/
 
-    if (Math.abs(pullDeltaX) < decisionVal) {
-      $card.addClass("reset");
-    }
+    //if (Math.abs(pullDeltaX) < decisionVal) {
+    //  $card.addClass("reset");
+    //}
 
     setTimeout(function() {
       $card.attr("style", "").removeClass("reset")
