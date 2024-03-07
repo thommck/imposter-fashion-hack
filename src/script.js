@@ -87,6 +87,15 @@ $(document).ready(function() {
 		alert(userId);
       }
     });
+	
+	$.ajax('/api/fakeapiget',
+    {
+      success: function (data, status, xhr) {
+        console.log(JSON.stringify(data))
+		//userId = data.clientPrincipal.userId;
+		//alert(userId);
+      }
+    });
 	  
 	// Update the name of the product
 	$("#productname").text(productText);
