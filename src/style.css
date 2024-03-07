@@ -75,34 +75,20 @@ body {
 }
 .demo__card__top {
   height: 20.5rem;
-  padding-top: 4rem;
+  padding-top: 2rem;
 }
-.demo__card__top.purple {
-  background: #7132B9;
-}
-.demo__card__top.blue {
-  background: #248CB6;
-}
-.demo__card__top.indigo {
-  background: #303F9F;
-}
-.demo__card__top.cyan {
-  background: #26C6DA;
-}
-.demo__card__top.lime {
-  background: #AFB42B;
-}
-.demo__card__top.brown {
-  background: #795548;
+.demo__card__top.white {
+  background: #FFFFFF;
 }
 .demo__card__img {
   overflow: hidden;
-  width: 10rem;
-  height: 10rem;
-  margin: 0 auto 1.5rem;
+  width: 17rem;
+  height: 17rem;
+  margin: 0 auto 0.5rem;
   border-radius: 50%;
   border: 0.5rem solid #ffffff;
   background-size: cover;
+  background-image: url('https://storagefashionimposter.blob.core.windows.net/images/fasion-dress.jpg');
 }
 .demo__card__name {
   text-align: center;

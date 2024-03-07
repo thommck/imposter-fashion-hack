@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   var animating = false;
   var cardsCounter = 0;
-  var numOfCards = 6;
+  var numOfCards = 1;
   var decisionVal = 80;
   var pullDeltaX = 0;
   var deg = 0;
@@ -24,15 +24,18 @@ $(document).ready(function() {
 
   function release() {
 	 
+	var imageUrl = "url('https://storagefashionimposter.blob.core.windows.net/images/fasion-dress.jpg')";
+	var productText = "Default Text";
+	 
     if (pullDeltaX >= decisionVal) {
       $card.addClass("to-right");
-	  alert("to right");
+	  console.log("to right");
     } else if (pullDeltaX <= -decisionVal) {
       $card.addClass("to-left");
-	  alert("to left");
+	  console.log("to-left");
     }
 
-    /*if (Math.abs(pullDeltaX) >= decisionVal) {
+    if (Math.abs(pullDeltaX) >= decisionVal) {
       $card.addClass("inactive");
 
       setTimeout(function() {
@@ -43,20 +46,39 @@ $(document).ready(function() {
           $(".demo__card").removeClass("below");
         }
       }, 300);
-    }*/
+    }
 
-    //if (Math.abs(pullDeltaX) < decisionVal) {
-    //  $card.addClass("reset");
-    //}
+    if (Math.abs(pullDeltaX) < decisionVal) {
+      $card.addClass("reset");
+    }
 
     setTimeout(function() {
+	  console.log("Reset variables");
       $card.attr("style", "").removeClass("reset")
         .find(".demo__card__choice").attr("style", "");
 
+      // Update the name of the product
+	  $("#productname").text(productText);
+	
+	  // Update the image
+	  $('.demo__card__img').css('background-image', imageUrl);
+	  
       pullDeltaX = 0;
       animating = false;
-    }, 300);
+    }, 300);	
   };
+
+  $(document).ready(function() {
+	var imageUrl = "url('https://storagefashionimposter.blob.core.windows.net/images/fasion-dress.jpg')";
+	var productText = "Default Text";
+	  
+	// Update the name of the product
+	$("#productname").text(productText);
+	
+	// Update the image
+	$('.demo__card__img').css('background-image', imageUrl);
+	
+  });
 
   $(document).on("mousedown touchstart", ".demo__card:not(.inactive)", function(e) {
     if (animating) return;
