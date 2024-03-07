@@ -26,13 +26,16 @@ $(document).ready(function() {
 	 
 	var imageUrl = "url('https://storagefashionimposter.blob.core.windows.net/images/fasion-dress.jpg')";
 	var productText = "Default Text";
+	var swiped = "";
 	 
     if (pullDeltaX >= decisionVal) {
       $card.addClass("to-right");
 	  console.log("to right");
+	  swiped = "Swiped right!";
     } else if (pullDeltaX <= -decisionVal) {
       $card.addClass("to-left");
 	  console.log("to-left");
+	  swiped = "Swiped left!";
     }
 
     if (Math.abs(pullDeltaX) >= decisionVal) {
@@ -63,6 +66,9 @@ $(document).ready(function() {
 	  // Update the image
 	  $('.demo__card__img').css('background-image', imageUrl);
 	  
+	  // Update the way the user swiped
+	  $("#swiped").text(swiped);
+	  
       pullDeltaX = 0;
       animating = false;
     }, 300);	
@@ -71,6 +77,14 @@ $(document).ready(function() {
   $(document).ready(function() {
 	var imageUrl = "url('https://storagefashionimposter.blob.core.windows.net/images/fasion-dress.jpg')";
 	var productText = "Default Text";
+	
+	
+	$.ajax('/api',
+    {
+      success: function (data, status, xhr) {
+        alert(data);
+      }
+    });
 	  
 	// Update the name of the product
 	$("#productname").text(productText);
