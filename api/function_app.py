@@ -17,9 +17,15 @@ def fakeapiget(req: func.HttpRequest) -> func.HttpResponse:
 
     random_url = random.choice(urls)
     
-    return func.HttpResponse(
-        json.dumps({"url": random_url}),
-        status_code=200
-    )
+    try:
+        return func.HttpResponse(
+            json.dumps({"url": random_url}),
+            status_code=200
+        )
+    except Exception as e:
+        return func.HttpResponse(
+            "Error",
+            status_code=500
+        )
 
     
