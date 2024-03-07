@@ -82,7 +82,7 @@ $(document).ready(function() {
 	$.ajax('/.auth/me',
     {
       success: function (data, status, xhr) {
-        alert(data);
+        console.log(JSON.stringify(data))
       }
     });
 	  
