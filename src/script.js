@@ -84,6 +84,7 @@ $(document).ready(function() {
       success: function (data, status, xhr) {
         console.log(JSON.stringify(data))
 		userId = data.clientPrincipal.userId;
+		alert(userId);
       }
     });
 	  
