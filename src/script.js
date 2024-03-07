@@ -79,7 +79,7 @@ $(document).ready(function() {
 	var productText = "Default Text";
 	
 	
-	$.ajax('/api',
+	$.ajax('/.auth/me',
     {
       success: function (data, status, xhr) {
         alert(data);
