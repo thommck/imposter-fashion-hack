@@ -2,6 +2,11 @@
   "auth": {
     "identityProviders": {
       "customOpenIdConnectProviders": {
+        "google": {
+        "registration": {
+          "clientIdSettingName": "GOOGLE_CLIENT_ID",
+          "clientSecretSettingName": "GOOGLE_CLIENT_SECRET"
+        }
         "aadb2c": {
           "registration": {
             "clientIdSettingName": "AADB2C_PROVIDER_CLIENT_ID",
