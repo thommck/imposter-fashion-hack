@@ -76,8 +76,9 @@ $(document).ready(function() {
   };
 
   $(document).ready(function() {
-	var imageUrl = "url('https://storagefashionimposter.blob.core.windows.net/images/fasion-dress.jpg')";
+	//var imageUrl = "url('https://storagefashionimposter.blob.core.windows.net/images/fasion-dress.jpg')";
 	var productText = "Default Text";
+	var imageUrl = '';
 	
 	$.ajax('/.auth/me',
     {
@@ -92,8 +93,7 @@ $(document).ready(function() {
     {
       success: function (data, status, xhr) {
         console.log(JSON.stringify(data))
-		//userId = data.clientPrincipal.userId;
-		//alert(userId);
+		imageUrl = data.url;
       }
     });
 	  
